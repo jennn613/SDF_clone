@@ -14,9 +14,9 @@ const headerMenu=document.querySelector('.header_nav_menu_list_item'); //소메�
 const navItems= document.querySelectorAll('.header_nav_menu_list_item');
 const showMenu= headerMenu.classList.contains('hidden');
 
-const headerLeftSide= document.querySelector('.header_nav_left'); //gnb 왼쪽 박스
+const headerLeftSide= document.querySelector('.header_nav_logo'); //gnb 왼쪽 박스
 const headerLogo = headerLeftSide.querySelectorAll('i')[0]; //gnb 로고
-const headerLeftText = document.querySelector('.header_nav_left_text'); //왼쪽 박스의 텍스트 감싼 박스
+const headerLeftText = document.querySelector('.header_nav_lang'); //왼쪽 박스의 텍스트 감싼 박스
 const headerLangSet = headerLeftText.querySelectorAll('span'); // 언어 설정 텍스트
 const headerMenuListBox = document.querySelector('.header_nav_menu_list'); //메뉴 ul
 const headerMenuList = headerMenuListBox.querySelectorAll('li');
@@ -98,6 +98,18 @@ header.addEventListener('mouseenter', () => {
 //    changeNavColor();
 //    header.style.backgroundColor = 'white';
     
+});
+
+header.addEventListener('mouseleave', () => {
+
+    navItems.forEach(function(list){
+        list.style.display = 'none';
+    });
+    setTimeout(function(){
+        navItems.forEach(function(list){
+            list.style.heihgt = 0;
+        })
+    }, 10);
 });
 
 
