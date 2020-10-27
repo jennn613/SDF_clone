@@ -62,27 +62,51 @@ const headerHeight  = header.getBoundingClientRect().height;
 
 //메뉴 보이기 & 숨기기
 
-const headerMenuHeight = headerMenu.getBoundingClientRect().height;
+const headerNavMenuBox = document.querySelector('.header_nav_menu_box');
+const headerNavMenuBoxHeight = headerMenuListBox.clientHeight;
+// console.log(headerNavMenuBoxHeight);
+
+const headerMenuHeight = headerMenu.clientHeight;
+// console.log(headerHeight); // header높이파악
+// console.log(headerMenuHeight);
+// headerMenu.classList.add('hidden');
+// headerNavMenuBox.style = 'height:0; overflow-y:hidden; display:none; transition:height 500ms ease';
+
+navItems.forEach(function(list){
+    list.style = 'height:0; overflow-y:hidden; display:none; transition:all 500ms ease';
+});
 
 header.addEventListener('mouseenter', () => {
+//     // headerMenu.style = 'display:block';
 
     navItems.forEach(function(list){
-        list.classList.remove('hidden');
-    });  
-    setTimeout(function(){headerMenuHeight='auto';},10);
-    header.style.backgroundColor = 'white';
-   changeNavColor();
+        // list.classList.remove('hidden');
+        list.style.display = 'block';
+    });
+    setTimeout(function(){
+        navItems.forEach(function(list){
+            list.style.height = 200+'px';
+        })
+    }, 10);
 
+
+//     setTimeout(function(){
+//         // headerMenu.style.height = headerMenuHeight;
+//         // headerMenu.style.height= headerMenuHeight;    
+//     }, 10);
+
+//    changeNavColor();
+//    header.style.backgroundColor = 'white';
     
 });
 
 
-header.addEventListener('mouseleave', () => {
-    navItems.forEach(function (navhide){
-        navhide.classList.add('hidden');
-    });
-    originalColor();
-});
+// header.addEventListener('mouseleave', () => {
+//     navItems.forEach(function (navhide){
+//         navhide.classList.add('hidden');
+//     });
+//     originalColor();
+// });
 
 
 
