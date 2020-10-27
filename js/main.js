@@ -78,7 +78,7 @@ navItems.forEach(function(list){
 
 header.addEventListener('mouseenter', () => {
 //     // headerMenu.style = 'display:block';
-
+changeNavColor();
     navItems.forEach(function(list){
         // list.classList.remove('hidden');
         list.style.display = 'block';
@@ -102,6 +102,7 @@ header.addEventListener('mouseenter', () => {
 
 header.addEventListener('mouseleave', () => {
 
+    originalColor();
     navItems.forEach(function(list){
         list.style.display = 'none';
     });
