@@ -1,0 +1,114 @@
+/* program */
+
+.content_program {
+  margin: 0 auto;
+  max-width: 1600px;
+  min-width: 1200px;
+  height: auto;
+  padding-top: 140px;
+  box-sizing: border-box;
+}
+
+.content_program_wrap {
+  width: 100%;
+  height: 1488px;
+  display: flex;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+
+.content_program_detail {
+  width: 45%;
+  height: 250px;
+}
+
+.content_program_detail > span {
+  display: block;
+  font-size: var(--font-title);
+  font-weight: var(--weight-bold);
+}
+
+.content_program_detail > p {
+  display: block;
+  line-height: 150%;
+  margin: 40px 0;
+  font-size: var(--font-basic);
+}
+
+.content_program_btn {
+  width: 260px;
+  height: 60px;
+  background-color: var(--color-blue);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.content_program_list {
+  width: 55%;
+  height: auto;
+  text-align: left;
+}
+
+.content_program_list ol {
+  width: 100%;
+  height: auto;
+}
+
+.content_program_list li {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid lightgray;
+  padding-left: 380px;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.content_program_list li:first-child {
+  border-top: 1px solid var(--color-grey);
+}
+.content_program_list li:last-child {
+  border-bottom: 1px solid var(--color-grey);
+}
+
+.content_program_list ol li a {
+  display: block;
+}
+
+.content_program_list li > a > span {
+  font-size: 24px;
+  font-weight: 700;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+
+.content_program_list li > a > strong {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.content_program_list li > a > p {
+  display: block;
+  font-size: 18px;
+  font-weight: var(--weight-regular);
+  line-height: 150%;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+  color: var(--color-grey);
+}
+
+.content_program_list > ol > li > a:hover strong {
+  text-decoration: underline;
+}
+
+.content_line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-grey);
+  margin: 0;
+  border: none;
+}

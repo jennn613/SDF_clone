@@ -1,0 +1,45 @@
+/* section */
+#contentBox {
+  width: 100%;
+  height: 3551px;
+  background-color: var(--color-white);
+}
+
+/* c-plan */
+.content_plan {
+  width: 100%;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  box-sizing: border-box;
+  font-size: var(--font-basic);
+}
+
+.content_plan > i {
+  font-size: 80px;
+  color: var(--color-blue);
+  margin-bottom: 40px;
+}
+
+.content_plan_text {
+  width: 780px;
+  height: 80px;
+  text-align: center;
+}
+
+.content_plan_text > p {
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 150%;
+}
+
+.content_plan_btn {
+  width: 208px;
+  height: 60px;
+  background-color: var(--color-blue);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+}

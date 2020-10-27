@@ -1,0 +1,139 @@
+@import "../css/base/reset.css";
+@import "../css/header.css";
+@import "../css/c_plan.css";
+@import "../css/c_speaker.css";
+@import "../css/c_program.css";
+@import "../css/c_register.css";
+@import "../css/footer.css";
+@import "../css/media.css";
+
+:root {
+  /* global */
+  --color-white: #ffffff;
+  --color-dark-grey: #55555a;
+  --color-grey: #606060;
+  --color-light-grey: #747475;
+  --color-black: #000000;
+  --color-blue: #003492;
+  --color-sky-blue: #0082c6;
+  --color-footer-letter: #6c6c6c;
+  --color-footer: #f7f7f7;
+
+  /*font size*/
+  --font-basic: 18px;
+  --font-title: 50px;
+  --speaker-title: 22px;
+  --program-part: 20px;
+  --program-time: 26px;
+  --footer-regualr: 16px;
+  --footer-small: 14px;
+
+  /* font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 650;
+  --weight-regular: 500;
+
+  /* Size */
+
+  /* animation */
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ol ul li {
+  list-style: none;
+}
+
+h1 {
+  color: var(--color-black);
+  font-weight: var(--weight-bold);
+}
+
+h2 {
+  color: var(--color-black);
+  font-weight: var(--weight-bold);
+}
+
+h3 {
+  color: var(--color-black);
+  font-weight: var(--weight-semi-bold);
+}
+
+h4 {
+  color: var(--color-black);
+}
+
+p {
+  color: var(--color-black);
+  font-size: var(--font-regular);
+}
+
+span {
+  color: var(--color-black);
+  font-size: var(--font-regular);
+}
+/* @media screen and (max-width: 768px) {
+    body {
+        background-color: lightgreen;
+    }
+    
+} */
+#wrap {
+  width: 100%;
+  min-width: 1200px;
+  height: auto;
+  background-color: white;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-size: var(--font-basic);
+  outline: 0;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+.fixed_btn {
+  width: 80px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 40px;
+  bottom: 60px;
+}
+
+.fixed_btn > button {
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+}
+
+.fixed_btn > button:hover {
+  color: ;
+}
+
+.fixed_btn > button > i {
+  font-size: 50px;
+  color: var(--color-light-grey);
+  cursor: pointer;
+}
+
+.fixed_btn > button:first-child {
+  margin-bottom: 30px;
+}

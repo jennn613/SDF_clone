@@ -1,0 +1,128 @@
+@media screen and (min-width: 400px) and (max-width: 780px) {
+  .header_nav_left_text {
+    display: none;
+  }
+
+  .header_nav_menu_box ul {
+    display: none;
+  }
+
+  .nav_btn_signIn {
+    display: none;
+  }
+
+  .mobile_toggle_btn > i {
+    display: block;
+    font-size: 40px;
+    color: white;
+    margin-left: 60px;
+  }
+
+  .content_plan {
+    height: 500px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content_speaker {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content_speaker_wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .content_speaker_button_icon {
+    font-size: 52px;
+    right: 100px;
+  }
+
+  .content_speaker_bottom {
+    margin-top: 100px;
+  }
+
+  .content_speaker_slider {
+    width: 100%;
+    margin-left: -80px;
+  }
+
+  .content_speaker_intro_box {
+    margin-top: 15px;
+  }
+
+  .content_speaker_intro_box:first-child {
+    margin-left: 0;
+  }
+
+  .content_program {
+    flex-direction: column;
+  }
+
+  .content_program_wrap {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content_program_detail {
+    margin-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content_line {
+    margin: 180px 0;
+  }
+
+  .content_register {
+    margin-top: 300px;
+    height: auto;
+  }
+
+  .content_register_box_wrap {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content_register_box {
+    width: 340px;
+    height: 140px;
+    margin-bottom: 40px;
+  }
+
+  .footer_top_official li > a,
+  .footer_top_contents li > a,
+  .footer_top_sns li > a {
+    font-size: 12px;
+  }
+
+  .footer_top_official li:first-child,
+  .footer_top_contents li:first-child,
+  .footer_top_sns li:first-child {
+    font-size: 18px;
+  }
+
+  .footer_bottom_info > p {
+    font-size: 14px;
+  }
+
+  .footer_bottom_info > span {
+    font-size: 14px;
+  }
+
+  #contentBox {
+    height: auto;
+  }
+}
