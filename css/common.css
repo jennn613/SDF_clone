@@ -124,10 +124,6 @@ button:hover {
   background-color: transparent;
 }
 
-.fixed_btn > button:hover {
-  color: ;
-}
-
 .fixed_btn > button > i {
   font-size: 50px;
   color: var(--color-light-grey);
@@ -136,4 +132,8 @@ button:hover {
 
 .fixed_btn > button:first-child {
   margin-bottom: 30px;
+}
+
+.fixed_btn > button > i:hover {
+  color: gray;
 }

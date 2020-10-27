@@ -185,4 +185,6 @@
   display: none;
 }
 
-/* header */
+.headerColorChange {
+  transition: all 300ms linear;
+}

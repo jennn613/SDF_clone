@@ -49,12 +49,12 @@ const headerHeight  = header.getBoundingClientRect().height;
    document.addEventListener('scroll', ()=> {
         if(window.scrollY > headerHeight)
         {
-          header.classList.add('headercolor');
+          header.classList.add('headerColorChange');
           changeNavColor();
 
         } 
         else {
-            header.classList.remove('headerColor');
+            header.classList.remove('headerColorChange');
      originalColor();
     }
     });
