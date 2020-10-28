@@ -123,7 +123,7 @@ const slider = document.querySelector('.content_speaker_slider') //가로로 긴
 
 let sliderWidth = slider.offsetWidth; //슬라이더 가로 값 받아옴
 // console.log(sliderWidth);
-const speakerBox = document.querySelectorAll('.content_speaker_intro_box'); //박스
+const speakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap'); //박스-1차
 const speakerBoxImg = document.querySelectorAll('.content_speaker_intro_box_img'); //박스 이미지
 
 for(let i =0; i <speakerBoxImg.length; i++ ){
@@ -135,15 +135,18 @@ let speakerBoxWidth = speakerBox[0].offsetWidth; //박스 가로 값 받아옴
 
 let speakerBoxNum = speakerBox.length;
 
+
 for(let i=0; i<3; i++){
 let cloneLastSpeakerBox = speakerBox[speakerBoxNum-(i+1)].cloneNode(true); // 마지막 박스 복사
 slider.prepend(cloneLastSpeakerBox); //복사해서 첫 박스 전에 넣기
 }
 
-let speakerBoxCount = speakerBox.length; // speaker box 개수 세기
-// console.log(speakerBoxCount); //9개
+let reSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap');
+let reSBoxLen = reSpeakerBox.length;// speaker box 개수 세기
 
-slider.style.width= speakerBoxWidth * speakerBoxCount + 'px'; // slider box 길이 늘이기
+// console.log(speakerBox.length, reSBoxLen); //11개
+
+slider.style.width= speakerBoxWidth * reSBoxLen + 'px'; // slider box 길이 늘이기
 // console.log(slider.style.width);
 
 slider.style.marginLeft = -440 + 'px'; //slider 왼쪽으로 440px만큼 이동

@@ -86,17 +86,20 @@
 }
 
 .content_speaker_slider {
-  width: 300%;
+  width: 600%;
   height: 100%;
   display: flex;
   background-color: red;
+}
+
+.content_speaker_intro_box_wrap {
+  width: 440px;
 }
 
 .content_speaker_intro_box {
   width: 340px;
   height: 470px;
   box-sizing: border-box;
-  margin: 0 100px;
   box-shadow: 0px 20px 40px 10px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   position: relative;
