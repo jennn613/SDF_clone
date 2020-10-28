@@ -30,6 +30,7 @@ function changeNavColor() { //nav 색 바꿔주는 함수
     headerLangSet.forEach(function(lang){
         lang.style.color= 'black';});
         headerMenuList.forEach(function(headerList){headerList.style.color = 'black';});
+        headerBtn.style.borderColor = '#003492';
 }
 
 function originalColor () { //nav의 원래 색
@@ -94,25 +95,27 @@ document.addEventListener('scroll', ()=> {
 
 
 
+let navHide;
+for(var i = 0; i < navItems.length; i++){
+navHide = navItems[i]
+// console.log(navHide);
+}
 
 const navBox = document.querySelector(".header_nav_menu_box"); //메뉴 감싼 박스
 let navBoxHeight = navBox.getBoundingClientRect(); //메뉴 감싼 박스의 높이
 
 header.addEventListener ('mouseenter', () => {
 
-    let navHide;
-    for(var i =0; i < navItems.length; i++){
-    navHide = navItems[i]
-    // console.log(navHide);
-    }
-    
-  
+   
+
     if(navHide) {
         navHide.classList.remove('hidden');
+
         navHide.style.display = 'flex';
         navHide.style.height = navBoxHeight;
         header.classList.add('headerColorChange');
         changeNavColor();
+        
     }
 
 });
@@ -130,3 +133,4 @@ header.addEventListener ('mouseleave', () => {
 
 });
 
+console.log(header)
