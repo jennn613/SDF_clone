@@ -30,7 +30,7 @@ function changeNavColor() { //nav 색 바꿔주는 함수
     headerLangSet.forEach(function(lang){
         lang.style.color= 'black';});
         headerMenuList.forEach(function(headerList){headerList.style.color = 'black';});
-        headerBtn.style.borderColor = '#003492';
+        headerBtn.style.border = '1px solid #003492';
 }
 
 function originalColor () { //nav의 원래 색
