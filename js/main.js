@@ -1,5 +1,7 @@
 "use strict";
 
+//btn js
+
 // 버튼 클릭시 최상단으로 이동
 
 const topBtnParent = document.querySelector('.fixed_btn'); //우측 하단 고정버튼 감싼 div
@@ -7,6 +9,8 @@ const topBtn = topBtnParent.querySelectorAll('button')[1] //우측 하단 고정
 topBtn.addEventListener('click', ()=> {
     window.scrollTo({top:0, left:0, behavior:'smooth'});
 });
+
+//menu js
 
 //navigation 보이기
 
@@ -34,7 +38,7 @@ function changeNavColor() { //nav 색 바꿔주는 함수
 }
 
 function originalColor () { //nav의 원래 색
-    header.style.backgroundColor = 'transparent';
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
     headerLogo.style.color = 'white';
     headerLangSet.forEach(function(lang){
         lang.style.color= 'white';});
@@ -107,3 +111,8 @@ header.addEventListener ('mouseleave', () => {
     }
 });
 
+//menu settings end
+
+//speaker part js 
+
+//speaker part end
