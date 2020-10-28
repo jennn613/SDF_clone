@@ -82,6 +82,15 @@ header.addEventListener ('mouseenter', () => {
 });
 
 
+//스크롤 안해도 메뉴 색 고정
+
+function headerColorfixed(){
+    if(window.scrollY > headerHeight) {
+        header.classList.add('headerColorChange');
+        changeNavColor();
+    }
+}
+
 header.addEventListener ('mouseleave', () => {
 
     for(var i = 0; i < navItems.length; i++){
@@ -93,6 +102,7 @@ header.addEventListener ('mouseleave', () => {
         navHide.style.display = 'none';
         header.classList.add('headerColorChange');
         originalColor();
+        headerColorfixed();
     }
     }
 });
