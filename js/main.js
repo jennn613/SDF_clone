@@ -55,58 +55,22 @@ document.addEventListener('scroll', ()=> {
     }
 });
 
-
-// 헤더에 마우스 올릴 때 메뉴 펼치기
-// navItems.forEach(function(list){
-//     list.style = 'height:0; display:none; transition: all 500ms linear';
-// }); //nav의 소메뉴 숨기기
-
-// header.addEventListener('mouseenter', () => {
-//     changeNavColor();
-//     navItems.forEach(function(list){
-//         list.style.display = 'block';
-//     });
-//     setTimeout(function(){
-//         navItems.forEach(function(list){
-//             list.style.height = headerHeight;
-//         })
-//     }, 100);
-// });
-
-// header.addEventListener('mouseleave', () => {
-
-//     originalColor();
-//     navItems.forEach(function(list){
-//         list.style.display = 'block';
-//     });
-//     setTimeout(function(){
-//         navItems.forEach(function(list){
-//             list.style ='height:0; display:none; transition: all 500ms linear';
-//         })
-//     }, 100);
-// });
-
-
 // 1. header에 마우스를 올림 
-// 2. headernav menu에서 hidden 유무 검사 (ㅂ고수) 
+// 2. headernav menu에서 hidden 유무 검사 (복수) 
 // 3. hidden잇으면 없애기 + transition이랑 높이값주기 (없으면 아무것도 수행X)
 // 4. 마우스 벗어났을 때 반대로 기능 수행
 
 
 
 
-let navHide;
-for(var i = 0; i < navItems.length; i++){
-navHide = navItems[i]
-// console.log(navHide);
-}
 
 const navBox = document.querySelector(".header_nav_menu_box"); //메뉴 감싼 박스
 let navBoxHeight = navBox.getBoundingClientRect(); //메뉴 감싼 박스의 높이
 
 header.addEventListener ('mouseenter', () => {
 
-   
+    for(var i = 0; i < navItems.length; i++){
+        let navHide = navItems[i]
 
     if(navHide) {
         navHide.classList.remove('hidden');
@@ -115,13 +79,15 @@ header.addEventListener ('mouseenter', () => {
         navHide.style.height = navBoxHeight;
         header.classList.add('headerColorChange');
         changeNavColor();
-        
+        }
     }
-
 });
 
 
 header.addEventListener ('mouseleave', () => {
+
+    for(var i = 0; i < navItems.length; i++){
+        let navHide = navItems[i]
 
   
     if(navItems) {
@@ -130,7 +96,7 @@ header.addEventListener ('mouseleave', () => {
         header.classList.add('headerColorChange');
         originalColor();
     }
-
+    }
 });
 
 console.log(header)
