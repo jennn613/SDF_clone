@@ -39,7 +39,7 @@ function originalColor () { //nav의 원래 색
     headerLangSet.forEach(function(lang){
         lang.style.color= 'white';});
         headerMenuList.forEach(function(headerList){headerList.style.color = 'white';});
-        headerBtn.style.bordercolor = 'transparent';
+        headerBtn.style.border = 'none';
 }
 
 //스크롤시 네비게이션에 배경색 생기게 하기
@@ -59,8 +59,6 @@ document.addEventListener('scroll', ()=> {
 // 2. headernav menu에서 hidden 유무 검사 (복수) 
 // 3. hidden잇으면 없애기 + transition이랑 높이값주기 (없으면 아무것도 수행X)
 // 4. 마우스 벗어났을 때 반대로 기능 수행
-
-
 
 
 
@@ -99,4 +97,3 @@ header.addEventListener ('mouseleave', () => {
     }
 });
 
-console.log(header)
