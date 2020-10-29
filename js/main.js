@@ -123,26 +123,38 @@ const slider = document.querySelector('.content_speaker_slider') //가로로 긴
 
 let sliderWidth = slider.offsetWidth; //슬라이더 가로 값 받아옴
 // console.log(sliderWidth);
+let bottomBox = document.querySelector('.content_speaker_bottom') //bottom 길이 받아옴
+let bottomBoxWidth = bottomBox.offsetWidth; //bottom 가로 길이 받아옴
 const speakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap'); //박스-1차
 const speakerBoxImg = document.querySelectorAll('.content_speaker_intro_box_img'); //박스 이미지
+let speakerBoxMargin = 100;
+
+let boxShow = 4; //보이고 싶은 박스의 개수
 
 for(let i =0; i <speakerBoxImg.length; i++ ){
     speakerBoxImg[i].style.backgroundImage = 'url(../css/src/img/s'+ (i+1) +'.jpg)';
-}
+} //이미지 삽입
+
+
 
 let speakerBoxWidth = speakerBox[0].offsetWidth; //박스 가로 값 받아옴
 // console.log(speakerBoxWidth);
 
-let speakerBoxNum = speakerBox.length;
+bottomBox.style.width = boxShow * speakerBoxWidth - speakerBoxMargin + 'px'; // 보이고 싶은 박스 개수만큼 bottom 넓이 설정
 
+let speakerBoxNum = speakerBox.length; //박스 개수
 
-for(let i=0; i<4; i++){
-let cloneLastSpeakerBox = speakerBox[speakerBoxNum-(i+1)].cloneNode(true); // 마지막 박스 복사
+let cloneLastSpeakerBox //마지막 박스 복사
+
+for(let i=0; i<boxShow; i++){
+ cloneLastSpeakerBox= speakerBox[speakerBoxNum-(i+1)].cloneNode(true); // 마지막 박스 복사
 slider.prepend(cloneLastSpeakerBox); //복사해서 첫 박스 전에 넣기
+
 }
 
 let newSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap');
 let newSBoxLen = newSpeakerBox.length;// speaker box 개수 세기
+
 
 // console.log(speakerBox.length, newSBoxLen); //11개
 
@@ -160,8 +172,7 @@ const slideBtn = slideBtnParent.querySelectorAll('button'); //버튼 2개 받아
 
 
 
-let clickCount = 1; //클릭 횟수 저장 변수
-
+let clickCount = 0; //클릭 횟수 저장 변수
 
 slideBtn[0].addEventListener('click', () => { //왼쪽 버튼 누를때
         clickCount++;
@@ -178,3 +189,13 @@ slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때
    
 // 복사본 마지막 박스가 첫번 째 자리에 오면 마지막 박스 원본이 첫번째 자리로 오게 만들기
 
+// console.log(newSpeakerBox)
+
+
+function copyBox(){
+if( boxShow = clickCount) {
+    copyLastBox = newSpeakerBox[newSBoxLen-1].cloneNode(true); //마지막 박스의 원본
+  
+  
+}
+}
