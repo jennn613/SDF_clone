@@ -59,7 +59,7 @@
   height: auto;
   position: absolute;
   bottom: 40px;
-  right: 0;
+  right: 0px;
 }
 
 .content_speaker_button_icon > button {
@@ -81,8 +81,8 @@
   margin: 0 auto;
   height: 608px;
   display: flex;
+
   overflow: hidden;
-  /* overflow: hidden; */
 }
 
 .content_speaker_slider {

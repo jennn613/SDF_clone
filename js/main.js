@@ -225,14 +225,14 @@ slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때 >
     // event.stopImmediatePropagation();
 
     clickCount++;
-    console.log(clickCount)
     slider.style.left = -(speakerBoxWidth * clickCount) + 'px'; // 길이 * 클릭 횟수만큼 왼쪽으로
 
     if(clickCount >= boxShow){ //원래 박스 개수만큼 클릭했을 때 (클론 이전)
-        slider.style.left = speakerBoxWidth * clickCount + 'px';
+        slider.style.left = -(speakerBoxWidth * clickCount) + 'px';
         clickCount = -(speakerBox.length - boxShow);
-        // 오른쪽으로 원래의 슬라이드 길이 만큼 이동
-      
+        console.log(clickCount);
+    //     // 오른쪽으로 원래의 슬라이드 길이 만큼 이동
+  
     }
    
     }); 
