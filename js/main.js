@@ -86,6 +86,7 @@ header.addEventListener ('mouseenter', () => {
 });
 
 
+
 //스크롤 안해도 메뉴 색 고정
 
 function headerColorfixed(){
@@ -117,8 +118,7 @@ header.addEventListener ('mouseleave', () => {
 
 //speaker part end
 
-const slideBtnParent = document.querySelector('content_speaker_button_icon'); //버튼 부모 박스
-// const slideBtn = slideBtnParent.querySelectorAll('button')[1] //버튼 배열
+
 const slider = document.querySelector('.content_speaker_slider') //가로로 긴 박스
 
 let sliderWidth = slider.offsetWidth; //슬라이더 가로 값 받아옴
@@ -136,18 +136,45 @@ let speakerBoxWidth = speakerBox[0].offsetWidth; //박스 가로 값 받아옴
 let speakerBoxNum = speakerBox.length;
 
 
-for(let i=0; i<3; i++){
+for(let i=0; i<4; i++){
 let cloneLastSpeakerBox = speakerBox[speakerBoxNum-(i+1)].cloneNode(true); // 마지막 박스 복사
 slider.prepend(cloneLastSpeakerBox); //복사해서 첫 박스 전에 넣기
 }
 
-let reSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap');
-let reSBoxLen = reSpeakerBox.length;// speaker box 개수 세기
+let newSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap');
+let newSBoxLen = newSpeakerBox.length;// speaker box 개수 세기
 
-// console.log(speakerBox.length, reSBoxLen); //11개
+// console.log(speakerBox.length, newSBoxLen); //11개
 
-slider.style.width= speakerBoxWidth * reSBoxLen + 'px'; // slider box 길이 늘이기
+slider.style.width= speakerBoxWidth * newSBoxLen + 'px'; // slider box 길이 늘이기
 // console.log(slider.style.width);
 
-slider.style.marginLeft = -440 + 'px'; //slider 왼쪽으로 440px만큼 이동
+
+
+slider.style.marginLeft = -1760 + 'px'; //slider 왼쪽으로 440px만큼 이동
 slider.style.position = 'relative';
+
+
+const slideBtnParent = document.querySelector('.content_speaker_button_icon'); //버튼 부모 박스
+const slideBtn = slideBtnParent.querySelectorAll('button'); //버튼 2개 받아옴
+
+
+
+let clickCount = 1; //클릭 횟수 저장 변수
+
+
+slideBtn[0].addEventListener('click', () => { //왼쪽 버튼 누를때
+        clickCount++;
+        slider.style.left = speakerBoxWidth * clickCount + 'px';  // 길이 * 클릭 횟수만큼 오른쪽으로
+      
+    }); 
+
+slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때
+        clickCount--;
+        slider.style.left = speakerBoxWidth * clickCount + 'px'; // 길이 * 클릭 횟수만큼 왼쪽으로
+      
+    }); 
+
+   
+// 복사본 마지막 박스가 첫번 째 자리에 오면 마지막 박스 원본이 첫번째 자리로 오게 만들기
+
