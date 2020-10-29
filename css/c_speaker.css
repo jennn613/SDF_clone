@@ -79,11 +79,10 @@
 
 .content_speaker_bottom {
   margin: 0 auto;
-
   height: 608px;
   display: flex;
   overflow: hidden;
-  background-color: thistle;
+  /* overflow: hidden; */
 }
 
 .content_speaker_slider {
@@ -125,12 +124,12 @@
   background-image: url("../css/src/img/s1.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 120%;
+  transition: all 0.3s ease-in;
 }
 
 .content_speaker_intro_box:hover .content_speaker_intro_box_img {
-  background-size: auto 140%;
-  /* transition: all 2s ease-in; */
+  background-size: auto 130%;
 }
 
 .content_speaker_intro_box_time {

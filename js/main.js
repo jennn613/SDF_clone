@@ -152,18 +152,20 @@ slider.prepend(cloneLastSpeakerBox); //복사해서 첫 박스 전에 넣기
 
 }
 
-let newSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap');
+
+
+let newSpeakerBox = document.querySelectorAll('.content_speaker_intro_box_wrap'); //원래 박스 + 클론 박스
 let newSBoxLen = newSpeakerBox.length;// speaker box 개수 세기
 
-
 // console.log(speakerBox.length, newSBoxLen); //11개
-
+// let sliderWidthPlus = speakerBoxWidth * newSBoxLen + 'px'; //클론으로 늘어난 길이
+// console.log(sliderWidthPlus)
 slider.style.width= speakerBoxWidth * newSBoxLen + 'px'; // slider box 길이 늘이기
-// console.log(slider.style.width);
 
 
 
-slider.style.marginLeft = -1760 + 'px'; //slider 왼쪽으로 440px만큼 이동
+
+slider.style.marginLeft = -(boxShow * speakerBoxWidth) + 'px'; //slider 왼쪽으로 4 * 440px만큼 이동 (첫번째박스 위치 맞추기)
 slider.style.position = 'relative';
 
 
@@ -171,31 +173,67 @@ const slideBtnParent = document.querySelector('.content_speaker_button_icon'); /
 const slideBtn = slideBtnParent.querySelectorAll('button'); //버튼 2개 받아옴
 
 
+// // transition 오류
+// var SlideAni = function(t){
+//     var aniType = t;
+//     if(aniType){
+//       slider.style.transition = 'left 400ms linear'
+//     }else{
+//       slider.style.transition = 'none';    
+//     }
+// } // SlideAni()
+// SlideAni(true);
 
-let clickCount = 0; //클릭 횟수 저장 변수
 
-slideBtn[0].addEventListener('click', () => { //왼쪽 버튼 누를때
-        clickCount++;
-        slider.style.left = speakerBoxWidth * clickCount + 'px';  // 길이 * 클릭 횟수만큼 오른쪽으로
-      
-    }); 
-
-slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때
-        clickCount--;
-        slider.style.left = speakerBoxWidth * clickCount + 'px'; // 길이 * 클릭 횟수만큼 왼쪽으로
-      
-    }); 
 
    
 // 복사본 마지막 박스가 첫번 째 자리에 오면 마지막 박스 원본이 첫번째 자리로 오게 만들기
 
-// console.log(newSpeakerBox)
+let clickCount = 0; //클릭 횟수 저장 변수
 
-
-function copyBox(){
-if( boxShow = clickCount) {
-    copyLastBox = newSpeakerBox[newSBoxLen-1].cloneNode(true); //마지막 박스의 원본
+slideBtn[0].addEventListener('click', () => { //왼쪽 버튼 누를때 <
+  // e.preventDefault();
+  // event.stopPropagation();
+  // event.stopImmediatePropagation();
+  
+  clickCount++;
+  slider.style.left = speakerBoxWidth * clickCount + 'px'; // 길이 * 클릭 횟수만큼 오른쪽으로
+  // newSpeakerBox[newSBoxLen-1].cloneNode(true);
   
   
+  if(clickCount >= boxShow){
+    slider.style.left = speakerBoxWidth * clickCount + 'px';
+    clickCount = -(speakerBox.length - boxShow);
+    // 왼쪽으로 boxShow(4개) * speaker box의 가로값 만큼 이동
+    
+    // setTimeout(function(){
+    //   SlideAni(false);
+    //   slider.style.left = speakerBoxWidth * clickCount + 'px';
+    //   setTimeout(function(){
+    //     SlideAni(true);
+    //   },0);
+    //  }, 450);
 }
-}
+
+    }); 
+
+
+
+slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때 >
+    // e.preventDefault();
+    // event.stopPropagation();
+    // event.stopImmediatePropagation();
+
+    clickCount++;
+    console.log(clickCount)
+    slider.style.left = -(speakerBoxWidth * clickCount) + 'px'; // 길이 * 클릭 횟수만큼 왼쪽으로
+
+    if(clickCount >= boxShow){ //원래 박스 개수만큼 클릭했을 때 (클론 이전)
+        slider.style.left = speakerBoxWidth * clickCount + 'px';
+        clickCount = -(speakerBox.length - boxShow);
+        // 오른쪽으로 원래의 슬라이드 길이 만큼 이동
+      
+    }
+   
+    }); 
+
