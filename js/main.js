@@ -89,7 +89,7 @@ header.addEventListener ('mouseenter', () => {
 
 //스크롤 안해도 메뉴 색 고정
 
-function headerColorfixed(){
+function headerColorFixed(){
     if(window.scrollY > headerHeight) {
         header.classList.add('headerColorChange');
         changeNavColor();
@@ -101,13 +101,13 @@ header.addEventListener ('mouseleave', () => {
     for(var i = 0; i < navItems.length; i++){
         let navHide = navItems[i]
 
-  
+
     if(navItems) {
         navHide.classList.add('hidden');
         navHide.style.display = 'none';
         header.classList.add('headerColorChange');
         originalColor();
-        headerColorfixed();
+        headerColorFixed();
     }
     }
 });
@@ -162,6 +162,7 @@ let newSBoxLen = newSpeakerBox.length;// speaker box 개수 세기
 // console.log(sliderWidthPlus)
 slider.style.width= speakerBoxWidth * newSBoxLen + 'px'; // slider box 길이 늘이기
 
+<<<<<<< Updated upstream
 
 
 
@@ -237,3 +238,24 @@ slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때 >
    
     }); 
 
+=======
+slider.style.marginLeft = -speakerBoxWidth * 3 + 'px'; //slider 왼쪽으로 가로 길이만큼 이동
+slider.style.position = 'relative';
+
+const slideBtnParent = document.querySelector('.content_speaker_button_icon'); //버튼 부모 박스
+const slideBtn = slideBtnParent.querySelectorAll('button') //버튼 배열
+
+
+slideBtn.addEventListener ('click', () =>
+{ if(){}
+
+
+}
+)
+
+
+// const speakerBox document.querySelector('.content_speaker_intro_box')
+// speakerBoxImg.addEventListener('mouseenter', () => {
+//     speakerBoxImg.style.
+// })
+>>>>>>> Stashed changes

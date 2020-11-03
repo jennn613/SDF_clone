@@ -124,12 +124,29 @@
   background-image: url("../css/src/img/s1.jpg");
   background-position: center;
   background-repeat: no-repeat;
+<<<<<<< Updated upstream
   background-size: auto 120%;
   transition: all 0.3s ease-in;
 }
 
 .content_speaker_intro_box:hover .content_speaker_intro_box_img {
   background-size: auto 130%;
+=======
+  background-size: cover;
+  position: relative;
+  transition: all 400ms ease-in;
+}
+
+.content_speaker_intro_box:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 255, 0.4);
+>>>>>>> Stashed changes
 }
 
 .content_speaker_intro_box_time {
