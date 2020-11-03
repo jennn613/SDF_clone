@@ -162,7 +162,6 @@ let newSBoxLen = newSpeakerBox.length;// speaker box 개수 세기
 // console.log(sliderWidthPlus)
 slider.style.width= speakerBoxWidth * newSBoxLen + 'px'; // slider box 길이 늘이기
 
-<<<<<<< Updated upstream
 
 
 
@@ -229,7 +228,7 @@ slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때 >
     slider.style.left = -(speakerBoxWidth * clickCount) + 'px'; // 길이 * 클릭 횟수만큼 왼쪽으로
 
     if(clickCount >= boxShow){ //원래 박스 개수만큼 클릭했을 때 (클론 이전)
-        slider.style.left = -(speakerBoxWidth * clickCount) + 'px';
+        slider.style.left = -(speakerBoxWidth * clickCount) + 'px'; 
         clickCount = -(speakerBox.length - boxShow);
         console.log(clickCount);
     //     // 오른쪽으로 원래의 슬라이드 길이 만큼 이동
@@ -238,24 +237,3 @@ slideBtn[1].addEventListener('click', () => { //오른쪽 버튼 누를때 >
    
     }); 
 
-=======
-slider.style.marginLeft = -speakerBoxWidth * 3 + 'px'; //slider 왼쪽으로 가로 길이만큼 이동
-slider.style.position = 'relative';
-
-const slideBtnParent = document.querySelector('.content_speaker_button_icon'); //버튼 부모 박스
-const slideBtn = slideBtnParent.querySelectorAll('button') //버튼 배열
-
-
-slideBtn.addEventListener ('click', () =>
-{ if(){}
-
-
-}
-)
-
-
-// const speakerBox document.querySelector('.content_speaker_intro_box')
-// speakerBoxImg.addEventListener('mouseenter', () => {
-//     speakerBoxImg.style.
-// })
->>>>>>> Stashed changes
